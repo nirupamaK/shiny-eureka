@@ -40,10 +40,10 @@ export class ShinyEurekaStack extends cdk.Stack {
               version: '0.2',
               phases: {
                 install: {
-                  commands: ['npm install'],
+                  commands: ['cd deployment-cdk','npm install'],
                 },
                 build: {
-                  commands: ['cdk deploy --require-approval never'],
+                  commands: ['cd deployment-cdk' ,'cdk deploy --require-approval never'],
                 },
               },
             }),
