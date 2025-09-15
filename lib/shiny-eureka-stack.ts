@@ -53,7 +53,9 @@ export class ShinyEurekaStack extends cdk.Stack {
         }),
       ],
     });
-
-
+  buildProject.addToRolePolicy(new iam.PolicyStatement({
+    actions: ['ssm:GetParameter'],
+    resources: [`arn:aws:ssm:${this.region}:${this.account}:parameter/cdk-bootstrap/hnb659fds/version`],
+  }));
   }
 }
